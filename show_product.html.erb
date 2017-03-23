@@ -1,0 +1,20 @@
+<p>
+  <strong>Product name:</strong>
+  <%= @product.product_name %>
+</p>
+
+<p>
+  <strong>Product description:</strong>
+  <%= @product.product_description %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @product.price %>
+</p>
+
+<%= link_to 'Edit', edit_tailor_product_path(@tailor, @product) %>
+<br><%= link_to 'Back to Profile', tailor_path(@tailor) %>
+
+
+
