@@ -1,0 +1,10 @@
+<h1>Sign up as a tailor</h1>
+
+<%= form_for @tailor do |f|%>
+	<p><%=f.label 'Name: '%><br><%=f.text_field :tailor_name%></p>
+	<p><%=f.label 'Address: '%><br><%=f.text_area :tailor_address%></p>
+	<p><%=f.label 'Contact Details: '%><br><%=f.text_area :tailor_contact%></p>
+	<p><%=f.label 'Username: '%><br><%=f.text_field :tailor_username%></p>
+	<p><%=f.label 'Password: '%><br><%=f.password_field :tailor_password%></p>
+	<p><%=f.submit%>
+<%end%>
