@@ -11,7 +11,7 @@
   </thead>
 
   <tbody>
-    <% @products.each do |product| %>
+    <% @product.each do |product| %>
       <tr>
         <td><%= link_to "#{product.product_name}", product %></td>
         <td><%= product.product_description %></td>
@@ -23,6 +23,6 @@
 
 <br>
 
-<%= link_to 'Back to your Profile', buyer_path(@buyer) %> 
+<%= link_to 'Back to your Profile', tailor_path(@tailor) %> 
 
 

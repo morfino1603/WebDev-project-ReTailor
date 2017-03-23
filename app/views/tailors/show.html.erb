@@ -3,6 +3,8 @@
 <h3><%= @tailor.tailor_contact %></h3>
 
 <h2>List of Products</h2>
+<%= link_to 'See All Products', "/tailors/#{@tailor.id}/all_products" %>
+
 
 <table>
   <thead>
@@ -17,18 +19,18 @@
   <tbody>
     <% @product.each do |product| %>
       <tr>
-        <td><%= link_to "#{product.product_name}", product %></td>
+        <td><%= link_to "#{product.product_name}", "/tailors/#{@tailor.id}/product/#{product.id}" %></td>
         <td><%= product.product_description %></td>
         <td><%= product.price %></td>
-        <td><%= link_to 'Show', product %></td>
-        <td><%= link_to 'Edit', edit_product_path(product) %></td>
-        <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+		<td><%= link_to 'Edit', edit_tailor_product_path(@tailor, product.id) %></td> 
+		<td><%= link_to 'Delete', "/tailors/#{@tailor.id}/products/#{product.id}", method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<%= link_to 'Add Product', new_tailor_product_path(@tailor) %>
+<br><%= link_to 'Add Product', new_tailor_product_path(@tailor) %><br>
+<%= link_to 'Logout', retailors_path %>
 
 
 

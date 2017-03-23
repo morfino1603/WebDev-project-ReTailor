@@ -21,7 +21,7 @@ end
 
 def show
 	@tailor = Tailor.find(params[:id])
-	@product = Product.where("tailor_id = ?", @tailor)
+	@product = @tailor.products.where("tailor_id = ?", @tailor)
 end
 
 def destroy
@@ -47,6 +47,26 @@ def check
 	else
 		redirect_to '/retailors/tailor_error'
 	end
+end
+
+def edit
+	
+end
+
+def show_product
+	@tailor = Tailor.find(params[:tailor_id])
+	@product = @tailor.products.find(params[:id])
+end
+
+def delete_product
+	@tailor = Tailor.find(params[:tailor_id])
+	@product = @tailor.products.find(params[:id])
+	redirect_to tailor_path(@tailor)
+end
+
+def all_products
+	@tailor = Tailor.find(params[:id])
+	@product = Product.all
 end
 
 end

@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   get '/retailors/buyer_login' => 'buyers#login'
   post '/retailors/buyer_login/check' => 'buyers#check'
   get '/retailors/buyer_error' => 'buyers#error'
+  get '/tailors/:tailor_id/product/:id' => 'tailors#show_product'
+  patch '/tailors/:tailor_id/products/:id/edit' => 'products#update'
+  get 'tailors/:id/all_products' => 'tailors#all_products'
   resources :tailors do
 	resources :products
   end 
